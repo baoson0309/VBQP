@@ -15,6 +15,7 @@ namespace VBQP
         string s = "";
         private DialogResult dg;
         private List<TreeNode> lst;
+        private int count = 0;
         public SelectAgency()
         {
             InitializeComponent();
@@ -24,14 +25,14 @@ namespace VBQP
         {
             get
             {
-                throw new System.NotImplementedException();
+                return count;
             }
             set
             {
             }
         }
 
-        public DialogResult DialogResult
+        public DialogResult SelectDialogResult
         {
             get
             {
@@ -41,25 +42,24 @@ namespace VBQP
 
         private void SelectAgency_Load(object sender, EventArgs e)
         {
-            lst = new List<TreeNode>();
-            showSelectBox();
-            
+           
         }
 
-        public void showSelectBox()
+        public string showSelectBox()
         {
             try
             {
+                lst = new List<TreeNode>();
                 using (System.IO.StreamReader reader = new System.IO.StreamReader("Agency.dat"))
                 {
                     this.treeView1.Nodes.Add("0", "Cơ quan ban hành");
                     while (!reader.EndOfStream)
                     {
-                        string[] s = reader.ReadLine().Split((char)"-"[0]);
-                        TreeNode[] n = this.treeView1.Nodes.Find(s[2], true);
+                        string[] si = reader.ReadLine().Split((char)"-"[0]);
+                        TreeNode[] n = this.treeView1.Nodes.Find(si[2], true);
                         if (n.Length > 0)
                         {
-                           TreeNode ne = n[0].Nodes.Add(s[0], s[1]);
+                           TreeNode ne = n[0].Nodes.Add(si[0], si[1]);
                            lst.Add(ne);
                         }
                     }
@@ -67,6 +67,8 @@ namespace VBQP
                     this.treeView1.AfterCheck += treeView1_AfterCheck;
                     this.treeView1.NodeMouseClick += treeView1_NodeMouseClick;
                 }
+                this.ShowDialog();
+                return this.s;
             }
             catch (Exception ex)
             {
@@ -109,6 +111,7 @@ namespace VBQP
         private void button2_Click(object sender, EventArgs e)
         {
             dg = DialogResult.Cancel;
+            this.Close();
             s = "";
         }
 
@@ -117,11 +120,14 @@ namespace VBQP
             dg = DialogResult.OK;
             foreach (var item in lst)
             {
-                if (item.)
+                if (item.Checked == true && item.Nodes.Count ==0)
                 {
-                    
+                    s = s + "," + item.Text;
+                    count++;
                 }
             }
+            s = s.Substring(1, s.Length - 1);
+            this.Close();
         }
     }
 }

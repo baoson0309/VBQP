@@ -77,12 +77,21 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -99,12 +108,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -118,6 +122,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -518,10 +523,10 @@
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(654, 459);
+            this.groupBox1.Size = new System.Drawing.Size(654, 354);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm văn bản QPPL";
@@ -529,6 +534,8 @@
             // panel4
             // 
             this.panel4.AutoSize = true;
+            this.panel4.Controls.Add(this.checkedListBox2);
+            this.panel4.Controls.Add(this.checkBox3);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.linkLabel1);
             this.panel4.Controls.Add(this.dateTimePicker2);
@@ -539,6 +546,7 @@
             this.panel4.Controls.Add(this.checkBox2);
             this.panel4.Controls.Add(this.checkBox1);
             this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label5);
@@ -546,14 +554,65 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 149);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(648, 109);
+            this.panel4.Size = new System.Drawing.Size(648, 202);
             this.panel4.TabIndex = 3;
+            // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox2.ColumnWidth = 200;
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Items.AddRange(new object[] {
+            "Ngưng hiệu lực một phần",
+            "Ngưng hiệu lực",
+            "Chưa xác định",
+            "Hết hiệu lực một phần",
+            "Hết hiệu lực toàn bộ",
+            "Còn hiệu lực",
+            "Chưa có hiệu lực"});
+            this.checkedListBox2.Location = new System.Drawing.Point(104, 110);
+            this.checkedListBox2.MultiColumn = true;
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(541, 60);
+            this.checkedListBox2.TabIndex = 5;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(115, 35);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(196, 17);
+            this.checkBox3.TabIndex = 4;
+            this.checkBox3.Text = "Tìm theo thời gian ban hành từ ngày";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(104, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Tìm kiếm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(112, 62);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(32, 13);
+            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Chọn";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CustomFormat = "";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(294, 32);
+            this.dateTimePicker2.Location = new System.Drawing.Point(490, 32);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(109, 20);
             this.dateTimePicker2.TabIndex = 1;
@@ -562,10 +621,35 @@
             // 
             this.dateTimePicker1.CustomFormat = "";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(115, 33);
+            this.dateTimePicker1.Location = new System.Drawing.Point(311, 33);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(109, 20);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.Value = new System.DateTime(1945, 1, 1, 20, 50, 0, 0);
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Mới đến cũ",
+            "Cũ đến mới"});
+            this.comboBox3.Location = new System.Drawing.Point(288, 83);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(167, 21);
+            this.comboBox3.TabIndex = 2;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Kết quả chính xác",
+            "Ngày ban hành",
+            "Ngày hiệu lực",
+            "Ngày hết hiệu lực"});
+            this.comboBox2.Location = new System.Drawing.Point(115, 83);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(167, 21);
+            this.comboBox2.TabIndex = 2;
             // 
             // comboBox1
             // 
@@ -603,12 +687,46 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(230, 36);
+            this.label6.Location = new System.Drawing.Point(426, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "đến ngày";
             this.label6.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Location = new System.Drawing.Point(7, 110);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Tình trạng hiệu lực:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label9.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(7, 86);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Sắp xếp theo:";
+            this.label8.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Location = new System.Drawing.Point(7, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Cơ quan ban hành:";
+            this.label7.Click += new System.EventHandler(this.label5_Click);
             // 
             // label5
             // 
@@ -691,6 +809,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
+            this.radioButton5.Checked = true;
             this.radioButton5.Location = new System.Drawing.Point(304, 7);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(71, 17);
@@ -706,19 +825,16 @@
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(62, 17);
             this.radioButton4.TabIndex = 2;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Tiêu đề";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
             this.radioButton3.Location = new System.Drawing.Point(104, 7);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(56, 17);
             this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Tất cả";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
@@ -785,6 +901,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.webBrowser1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -793,71 +910,14 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // webBrowser1
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(7, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Cơ quan ban hành:";
-            this.label7.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(112, 62);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(32, 13);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Chọn";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(7, 86);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Sắp xếp theo:";
-            this.label8.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Kết quả chính xác",
-            "Ngày ban hành",
-            "Ngày hiệu lực",
-            "Ngày hết hiệu lực"});
-            this.comboBox2.Location = new System.Drawing.Point(115, 83);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(167, 21);
-            this.comboBox2.TabIndex = 2;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Mới đến cũ",
-            "Cũ đến mới"});
-            this.comboBox3.Location = new System.Drawing.Point(288, 83);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(167, 21);
-            this.comboBox3.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(461, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(654, 459);
+            this.webBrowser1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -893,6 +953,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -976,6 +1037,10 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.WebBrowser webBrowser1;
 
     }
 }
